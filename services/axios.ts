@@ -1,7 +1,8 @@
 import axios from "axios";
 
-export const instance = axios.create({
-    baseURL: 'https://some-domain.com/api/',
-    timeout: 1000,
-  });
+const instance = axios.create({
+  baseURL: 'https://gestao-hostel-app.herokuapp.com',
+  timeout: 1000,
+});
 
+export default instance;
