@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .content {
+    width: 100%;
+    max-width: 900px;
+    height: 200px;
+    .titlePage {
+      font-size: 2.2rem;
+    }
+    .containerTextInput {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 10px;
+      gap: 10px;
+      .contentTextInput {
+        width: 100%;
+      }
+    }
+    .buttonSubmit {
+      width: 80px;
+      height: 35px;
+      background: #0275d8;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      cursor: pointer;
+      .buttonText {
+        font-size: 1rem;
+        color: #fff;
+      }
+    }
+    .linkRedirect {
+      color: #0275d8;
+      font-size: 1.1rem;
+    }
+  }
+}
