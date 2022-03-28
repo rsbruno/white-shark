@@ -1,6 +1,4 @@
 import styles from "../styles/Home.module.scss";
-//import {API} from "https://gestao-hostel-app.herokuapp.com/"
-import axios from "../services/axios.js";
 import Link from "next/link";
 
 export default function Index() {
