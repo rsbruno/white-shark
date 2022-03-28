@@ -46,6 +46,7 @@ export default function Guests() {
           }, 3500);
         })
         .catch((err) => {
+          console.log(err)
           if (err.response) {
             if (err.response.status == 422)
               toast.warn("User already created!", toastDefaultConfig);

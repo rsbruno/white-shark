@@ -23,6 +23,7 @@ export function Loading({ animation = "zoom", contentStyle, visible }) {
       customStyles={defaultStyle || contentStyle}
       animation={animation}
       visible={isLoading}
+      onClose={()=>{}}
     >
       <div className={styles.lds_ring}>
         <div></div>
