@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.scss";
 import axios from "../services/axios.js";
 import Link from "next/link";
 
-export default function Index({ hello }) {
+export default function Index() {
   return (
     <>
       <div className={styles.head}>
@@ -70,11 +70,3 @@ export default function Index({ hello }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const response = await axios.get("/hello-world");
-  return {
-    props: {
-      hello: response.data,
-    },
-  };
-};
