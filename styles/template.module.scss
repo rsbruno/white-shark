@@ -1,0 +1,31 @@
+.container {
+  header {
+    height: 4rem;
+    width: 100%;
+    background-color: #4a5568;
+    display: flex;
+    color: #a9a9a9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    .titleContainer {
+      width: 360px;
+      a {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #fff;
+      }
+    }
+    .linkContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding:0 20px;
+      a{
+          font-size: 1.2rem;
+      }
+    }
+  }
+}

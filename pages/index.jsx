@@ -4,22 +4,6 @@ import Link from "next/link";
 export default function Index() {
   return (
     <>
-      <div className={styles.head}>
-        <div className={styles.title}>Sparkling Water Hostel</div>
-        <ul>
-          <li className={styles.menu}>
-            <Link href="/customers">
-              <a>Customers</a>
-            </Link>
-          </li>
-          <li className={styles.menu}>
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
       <div className={styles.text_left}>
         <h1>Sparkling Water Hostel</h1> <br></br>
         <p>

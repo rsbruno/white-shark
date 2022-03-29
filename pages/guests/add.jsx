@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import styles from "../../styles/guests/index.module.scss";
+import styles from "../../styles/guests/add.module.scss";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
