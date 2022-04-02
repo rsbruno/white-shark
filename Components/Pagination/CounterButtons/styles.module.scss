@@ -1,0 +1,21 @@
+.container {
+  button {
+    width: 2.3rem;
+    height: 2.3rem;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    outline: none;
+    margin: 3px;
+    border: solid 2px transparent;
+    border-radius: 2px;
+    transition: all ease 400ms;
+    &:hover {
+      background: #ededed;
+    }
+  }
+  .active {
+    background: #ededed;
+    border: solid 2px #ddd;
+  }
+}

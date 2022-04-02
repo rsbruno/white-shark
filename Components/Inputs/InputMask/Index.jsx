@@ -23,7 +23,8 @@ export default function InputMask({ name, ...rest }) {
     <div className={styles.container}>
       <ReactInputMask
         ref={inputRef}
-        mask="(99)99999-9999"
+        mask="+9-999-999-9999"
+        maskChar={null}
         alwaysShowMask={false}
         defaultValue={defaultValue}
         {...rest}
