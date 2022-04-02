@@ -29,6 +29,11 @@
     margin-bottom: 7px;
     padding-bottom: 7px;
     padding-top: 7px;
+    div {
+      select {
+        margin: 0 12px;
+      }
+    }
     .containerInput {
       label {
         margin-right: 7px;

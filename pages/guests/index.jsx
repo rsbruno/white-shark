@@ -16,6 +16,13 @@ export default function Guests({ totalElements, totalPages, content }) {
   }
 
   useEffect(() => {
+    if (pagination.showing !== 10) {
+      setPagination((prevState) => ({ ...prevState, showing: 10 }));
+      updateDataPage(1, 10);
+    }
+  }, []);
+
+  useEffect(() => {
     setLisGuests(() => pagination.content);
   }, [pagination.content]);
 

@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import styles from "../../styles/guests/add.module.scss";
 
 import { ToastContainer, toast } from "react-toastify";
+import Head from "next/head";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "../../services/axios.js";
 import { useRouter } from "next/router";
@@ -46,7 +47,7 @@ export default function Guests() {
           }, 3500);
         })
         .catch((err) => {
-          console.log(err)
+          console.log(err);
           if (err.response) {
             if (err.response.status == 422)
               toast.warn("User already created!", toastDefaultConfig);
@@ -66,53 +67,59 @@ export default function Guests() {
   }
 
   return (
-    <div className={styles.container}>
-      <ToastContainer />
-      <Loading visible={isLoading} />
-      <section className={styles.content}>
-        <h1 className={styles.titlePage}>Customer View</h1>
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <section className={styles.containerTextInput}>
-            <div className={styles.contentTextInput}>
-              <TextInput name="firstName" placeholder="First Name" />
-            </div>
-            <div className={styles.contentTextInput}>
-              <TextInput name="lastName" placeholder="Last Name" />
-            </div>
-          </section>
+    <>
+      <Head>
+        <title>SWH | New Guests</title>
+      </Head>
 
-          <section className={styles.containerTextInput}>
-            <div className={styles.contentTextInput}>
-              <TextInput name="email" placeholder="Email Address" />
-            </div>
-            <div className={styles.contentTextInput}>
-              <InputMask name="phoneNumber" placeholder="Phone Number" />
-            </div>
-          </section>
+      <div className={styles.container}>
+        <ToastContainer />
+        <Loading visible={isLoading} />
+        <section className={styles.content}>
+          <h1 className={styles.titlePage}>Customer View</h1>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <section className={styles.containerTextInput}>
+              <div className={styles.contentTextInput}>
+                <TextInput name="firstName" placeholder="First Name" />
+              </div>
+              <div className={styles.contentTextInput}>
+                <TextInput name="lastName" placeholder="Last Name" />
+              </div>
+            </section>
 
-          <section className={styles.containerTextInput}>
-            <div className={styles.contentTextInput}>
-              <TextInput name="address" placeholder="Address" />
-            </div>
-          </section>
+            <section className={styles.containerTextInput}>
+              <div className={styles.contentTextInput}>
+                <TextInput name="email" placeholder="Email Address" />
+              </div>
+              <div className={styles.contentTextInput}>
+                <InputMask name="phoneNumber" placeholder="Phone Number" />
+              </div>
+            </section>
 
-          <section className={styles.containerTextInput}>
-            <div className={styles.contentTextInput}>
-              <TextInput name="country" placeholder="Country" />
-            </div>
-            <div className={styles.contentTextInput}>
-              <TextInput name="state" placeholder="State" />
-            </div>
-          </section>
+            <section className={styles.containerTextInput}>
+              <div className={styles.contentTextInput}>
+                <TextInput name="address" placeholder="Address" />
+              </div>
+            </section>
 
-          <button type="submit" className={styles.buttonSubmit}>
-            <span className={styles.buttonText}>Submit</span>
-          </button>
-        </Form>
-        <Link href="/guests">
-          <a className={styles.linkRedirect}>Return to All Customers</a>
-        </Link>
-      </section>
-    </div>
+            <section className={styles.containerTextInput}>
+              <div className={styles.contentTextInput}>
+                <TextInput name="country" placeholder="Country" />
+              </div>
+              <div className={styles.contentTextInput}>
+                <TextInput name="state" placeholder="State" />
+              </div>
+            </section>
+
+            <button type="submit" className={styles.buttonSubmit}>
+              <span className={styles.buttonText}>Submit</span>
+            </button>
+          </Form>
+          <Link href="/guests">
+            <a className={styles.linkRedirect}>Return to All Customers</a>
+          </Link>
+        </section>
+      </div>
+    </>
   );
 }

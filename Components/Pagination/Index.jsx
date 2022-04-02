@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 
 export function Pagination() {
-  const { pagination } = usePagination();
+  const { pagination, previousPage, nextPage } = usePagination();
 
   const [buttons, setButtons] = useState([]);
 
@@ -35,9 +35,25 @@ export function Pagination() {
         entries
       </div>
       <div className={styles.containerControlls}>
-        <span>Previous</span>
+        <button
+          onClick={previousPage}
+          className={(pagination.currentPage <= 1 && styles.inactive) || ""}
+          disabled={pagination.currentPage <= 1}
+          style={{ marginRight: "15px" }}
+        >
+          Previous
+        </button>
         <div className={styles.containerCounters}>{buttons}</div>
-        <span>Next</span>
+        <button
+          onClick={nextPage}
+          className={
+            (pagination.currentPage >= pagination.totalPages && styles.inactive) || ""
+          }
+          disabled={pagination.currentPage >= pagination.totalPages}
+          style={{ marginLeft: "15px" }}
+        >
+          Next
+        </button>
       </div>
     </section>
   );
